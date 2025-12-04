@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "AI Studio 导出助手",
+  "version": "1.0.0",
+  "description": "一键将 Google AI Studio 的对话导出为格式优美的 Markdown 或 PDF 文件。",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "导出 AI Studio 对话"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://aistudio.google.com/*"],
+      "js": ["html2pdf.js", "content.js"] 
+    }
+  ]
+}
